@@ -11,6 +11,8 @@
 
 ---
 
+> **AI-assisted project:** RecordGD was developed with the help of an AI assistant (Claude).
+
 ## Features
 
 - **Records automatically:** every attempt is recorded in the background, and only completed runs are kept.

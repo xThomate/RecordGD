@@ -4,6 +4,8 @@ Automatically saves a video of your run when you beat a level.
 
 Every attempt is recorded in the background, and attempts you don't finish are never saved. When you complete the level, a **Save Run** button appears on the end screen: press it to keep the video (with game audio) in your recordings folder, together with a small `.json` file describing the run. You can also have every completion saved automatically.
 
+> **AI-assisted project:** RecordGD was developed with the help of an AI assistant (Claude).
+
 ## Features
 - Records automatically: just play, and your winning run is waiting for you on the end screen
 - Optionally starts the video a few seconds before the winning attempt, so it opens on your last death
