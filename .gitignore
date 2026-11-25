@@ -3,6 +3,9 @@ build/
 build-*/
 out/
 *.geode
+# ...except the packaged mod in release/, which is committed on purpose
+!release/
+!release/*.geode
 
 # Editors / tools
 .cache/

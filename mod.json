@@ -8,6 +8,9 @@
 	"version": "v1.0.0",
 	"developer": "thomasch",
 	"description": "Automatically saves a video of your run when you beat a level.",
+	"links": {
+		"source": "https://github.com/xThomate/RecordGD"
+	},
 	"tags": [
 		"utility",
 		"recording",

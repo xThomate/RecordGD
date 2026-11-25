@@ -23,3 +23,18 @@ setup_geode_mod(${PROJECT_NAME})
 if (WIN32)
     target_link_libraries(${PROJECT_NAME} mfplat mfreadwrite mfuuid ole32)
 endif()
+
+# After packaging, copy the .geode into release/ so it can be committed and downloaded from the repo.
+file(READ "${CMAKE_CURRENT_SOURCE_DIR}/mod.json" RECORDGD_MOD_JSON)
+string(JSON RECORDGD_MOD_ID GET "${RECORDGD_MOD_JSON}" id)
+if (TARGET ${PROJECT_NAME}_PACKAGE)
+    add_custom_target(${PROJECT_NAME}_RELEASE_COPY ALL
+        DEPENDS ${PROJECT_NAME}_PACKAGE
+        COMMAND ${CMAKE_COMMAND} -E make_directory "${CMAKE_CURRENT_SOURCE_DIR}/release"
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+            "${CMAKE_CURRENT_BINARY_DIR}/${RECORDGD_MOD_ID}.geode"
+            "${CMAKE_CURRENT_SOURCE_DIR}/release/${RECORDGD_MOD_ID}.geode"
+        COMMENT "Copying ${RECORDGD_MOD_ID}.geode to release/"
+        VERBATIM
+    )
+endif()

@@ -23,7 +23,7 @@
 ## Installation
 
 1. Install [Geode](https://geode-sdk.org) (v6, Geometry Dash 2.2091).
-2. Download `thomasch.recordgd.geode` from the [Releases](../../releases) page, or from the latest successful run on the [Actions](../../actions) tab.
+2. Download [`release/thomasch.recordgd.geode`](release/thomasch.recordgd.geode) from this repo (or from the latest run on the [Actions](../../actions) tab).
 3. Put it in Geometry Dash's `geode/mods` folder and restart the game.
 
 ## Where videos are saved
@@ -68,7 +68,7 @@ geode build
 
 The mod has no dependencies on other mods: video and audio are encoded with Windows Media Foundation (`mfplat`, `mfreadwrite`, `mfuuid`), which ships with Windows.
 
-Every push is also built by GitHub Actions (`.github/workflows/build.yml`), and the resulting `.geode` file is attached to the workflow run.
+Each build also copies the packaged mod to `release/thomasch.recordgd.geode`, which is committed so people can download it straight from the repo. Every push is also built by GitHub Actions (`.github/workflows/build.yml`), and the resulting `.geode` file is attached to the workflow run.
 
 ## How it works
 
