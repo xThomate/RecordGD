@@ -1,0 +1,160 @@
+{
+	"geode": "6.0.0",
+	"gd": {
+		"win": "2.2091"
+	},
+	"id": "thomasch.recordgd",
+	"name": "RecordGD",
+	"version": "v1.0.0",
+	"developer": "thomasch",
+	"description": "Automatically saves a video of your run when you beat a level.",
+	"tags": [
+		"utility",
+		"recording",
+		"offline"
+	],
+	"resources": {
+		"sprites": [
+			"resources/*.png"
+		]
+	},
+	"settings": {
+		"general-title": {
+			"type": "title",
+			"name": "General"
+		},
+		"enabled": {
+			"type": "bool",
+			"name": "Enabled",
+			"description": "Record every attempt and keep the video when you complete the level.",
+			"default": true
+		},
+		"output-folder": {
+			"type": "folder",
+			"name": "Output Folder",
+			"description": "Where finished recordings are saved. Leave empty to use the mod's save folder (recordings/).",
+			"default": ""
+		},
+		"notify": {
+			"type": "bool",
+			"name": "Show Notifications",
+			"description": "Show a notification when a recording is being saved and when it's done.",
+			"default": true
+		},
+		"ask-before-saving": {
+			"type": "bool",
+			"name": "Ask Before Saving",
+			"description": "Show a 'Save Run' button on the end screen instead of saving every completion automatically. Runs you don't save are discarded when you leave the end screen.",
+			"default": true
+		},
+		"video-title": {
+			"type": "title",
+			"name": "Video"
+		},
+		"resolution": {
+			"type": "string",
+			"name": "Resolution",
+			"description": "Output video height. Never upscales above your window size.",
+			"default": "1080p",
+			"one-of": [
+				"native",
+				"1440p",
+				"1080p",
+				"720p",
+				"480p"
+			]
+		},
+		"fps": {
+			"type": "int",
+			"name": "FPS",
+			"description": "Frames per second of the saved video.",
+			"default": 60,
+			"min": 24,
+			"max": 240
+		},
+		"bitrate": {
+			"type": "int",
+			"name": "Bitrate (Mbps)",
+			"description": "Video bitrate in megabits per second.",
+			"default": 20,
+			"min": 1,
+			"max": 200
+		},
+		"hardware-encoding": {
+			"type": "bool",
+			"name": "Hardware Encoding",
+			"description": "Use your GPU's video encoder (NVIDIA / AMD / Intel) through Windows Media Foundation. Falls back to the built-in software encoder automatically if it fails.",
+			"default": true
+		},
+		"audio": {
+			"type": "bool",
+			"name": "Record Audio",
+			"description": "Capture the game's audio (music and sound effects) at your current in-game volume.",
+			"default": true
+		},
+		"pre-roll-seconds": {
+			"type": "float",
+			"name": "Seconds Before Attempt",
+			"description": "Also include this much footage from before the winning attempt started, for example your last death. 0 = the video starts with the winning attempt.",
+			"default": 0.0,
+			"min": 0.0,
+			"max": 30.0
+		},
+		"tail-seconds": {
+			"type": "float",
+			"name": "Seconds After Completion",
+			"description": "Keep recording this long after you finish, to include the end animation.",
+			"default": 3.0,
+			"min": 0.0,
+			"max": 15.0
+		},
+		"mic-title": {
+			"type": "title",
+			"name": "Microphone"
+		},
+		"microphone": {
+			"type": "bool",
+			"name": "Record Microphone",
+			"description": "Mix your microphone into the video's audio. Off by default.",
+			"default": false
+		},
+		"mic-volume": {
+			"type": "float",
+			"name": "Microphone Volume",
+			"description": "Microphone loudness in the video (1.0 = unchanged).",
+			"default": 1.0,
+			"min": 0.0,
+			"max": 4.0
+		},
+		"mic-device": {
+			"type": "int",
+			"name": "Microphone Device",
+			"description": "0 = system default input. 1, 2, 3... pick a specific device; the list is written to the Geode log when recording starts.",
+			"default": 0,
+			"min": 0,
+			"max": 32
+		},
+		"filter-title": {
+			"type": "title",
+			"name": "When To Save"
+		},
+		"record-practice": {
+			"type": "bool",
+			"name": "Save Practice Runs",
+			"description": "Also save completions made in practice mode.",
+			"default": false
+		},
+		"record-startpos": {
+			"type": "bool",
+			"name": "Save Start Position Runs",
+			"description": "Also save completions that started from a start position.",
+			"default": false
+		},
+		"first-completion-only": {
+			"type": "bool",
+			"name": "First Completion Only",
+			"description": "Only save a video the first time you beat a level.",
+			"default": false
+		}
+	}
+}

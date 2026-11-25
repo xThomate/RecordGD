@@ -1,0 +1,14 @@
+# Build output
+build/
+build-*/
+out/
+*.geode
+
+# Editors / tools
+.cache/
+.vs/
+.vscode/
+.idea/
+
+# Local preview images, not part of the mod
+Claude outputs/
